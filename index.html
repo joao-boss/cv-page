@@ -27,6 +27,11 @@
     </script>
     <style>
         @media print {
+            @page {
+                size: A4;
+                margin: 10mm 15mm;
+            }
+
             .no-print {
                 display: none !important;
             }
@@ -34,9 +39,13 @@
             body {
                 background-color: white !important;
                 color: black !important;
+                padding: 0 !important;
+                margin: 0 !important;
             }
 
-            .print-padding {
+            .max-w-4xl {
+                max-width: 100% !important;
+                margin: 0 !important;
                 padding: 0 !important;
             }
 
@@ -52,7 +61,8 @@
             .shadow-lg,
             .shadow-xl,
             .shadow-2xl,
-            .shadow-sm {
+            .shadow-sm,
+            .shadow-md {
                 box-shadow: none !important;
             }
 
@@ -66,6 +76,7 @@
 
             section {
                 break-inside: avoid;
+                margin-bottom: 2rem;
             }
 
             .border-indigo-600 {
@@ -230,8 +241,8 @@
             <section class="bg-white p-8 md:p-10 rounded-3xl shadow-sm border border-slate-100 section-animate">
                 <h2 class="text-2xl font-bold text-slate-900 mb-6 flex items-center gap-3">
                     <span class="w-8 h-1 bg-indigo-600 rounded-full"></span>
-                    <span class="lang-pt">Perfil Profissional: Produtor Multimídia</span>
-                    <span class="lang-en">Professional Profile: Multimedia Producer</span>
+                    <span class="lang-pt">Produtor Multimídia</span>
+                    <span class="lang-en">Multimedia Producer</span>
                 </h2>
                 <p class="text-lg text-slate-700 leading-relaxed italic lang-pt">
                     Profissional multidisciplinar com mais de 10 anos de experiência em Design Gráfico e Produção de
