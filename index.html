@@ -32,21 +32,42 @@
                 margin: 10mm 15mm;
             }
 
+            * {
+                background: white !important;
+                color: black !important;
+                box-shadow: none !important;
+                text-shadow: none !important;
+                -webkit-print-color-adjust: exact !important;
+                print-color-adjust: exact !important;
+            }
+
             .no-print {
                 display: none !important;
             }
 
             body {
-                background-color: white !important;
+                background: white !important;
                 color: black !important;
                 padding: 0 !important;
                 margin: 0 !important;
+                width: 100% !important;
+                max-width: none !important;
             }
 
             .max-w-4xl {
-                max-width: 100% !important;
+                max-width: none !important;
+                width: 100% !important;
                 margin: 0 !important;
                 padding: 0 !important;
+            }
+
+            header,
+            section,
+            footer {
+                width: 100% !important;
+                max-width: none !important;
+                margin-left: 0 !important;
+                margin-right: 0 !important;
             }
 
             .page-break {
@@ -56,14 +77,6 @@
             a {
                 text-decoration: none !important;
                 color: black !important;
-            }
-
-            .shadow-lg,
-            .shadow-xl,
-            .shadow-2xl,
-            .shadow-sm,
-            .shadow-md {
-                box-shadow: none !important;
             }
 
             .tab-content {
@@ -76,11 +89,41 @@
 
             section {
                 break-inside: avoid;
-                margin-bottom: 2rem;
+                margin-bottom: 1.5rem !important;
+                border-color: black !important;
             }
 
-            .border-indigo-600 {
-                border-color: #4f46e5 !important;
+            h1,
+            h2,
+            h3,
+            h4,
+            p,
+            li,
+            span,
+            div {
+                color: black !important;
+            }
+
+            .border-indigo-600,
+            .border-slate-200 {
+                border-color: black !important;
+            }
+
+            svg path,
+            svg rect,
+            svg circle {
+                stroke: black !important;
+                fill: none !important;
+            }
+
+            /* Ensure background is white for indigo-900 sections too */
+            .bg-indigo-900,
+            .bg-indigo-600,
+            .bg-white {
+                background: white !important;
+                color: black !important;
+                border: 1px solid #eee;
+                /* Light border for structure in print */
             }
         }
 
@@ -414,7 +457,8 @@
                         </p>
                         <p class="text-slate-500 text-sm italic lang-pt">Oficina de Música de Curitiba (PUC-PR) | 2023
                         </p>
-                        <p class="text-slate-500 text-sm italic lang-en">Curitiba Music Workshop (PUC-PR) | 2023</p>
+                        <p class="text-slate-500 text-sm italic lang-en">Oficina de Música de Curitiba Workshop (PUC-PR)
+                            | 2023</p>
                     </div>
                 </div>
             </section>
@@ -587,7 +631,8 @@
                     <span class="lang-en">Music Production Laboratory</span>
                     <span class="text-slate-500 font-normal lang-pt">| Oficina de Música de Curitiba (PUC-PR)
                         (2023)</span>
-                    <span class="text-slate-500 font-normal lang-en">| Curitiba Music Workshop (PUC-PR) (2023)</span>
+                    <span class="text-slate-500 font-normal lang-en">| Oficina de Música de Curitiba Workshop (PUC-PR)
+                        (2023)</span>
                 </p>
                 <p class="font-bold">Design Gráfico <span class="text-slate-500 font-normal italic">| UNICURITIBA
                         (2013)</span>
