@@ -116,14 +116,12 @@
                 fill: none !important;
             }
 
-            /* Ensure background is white for indigo-900 sections too */
             .bg-indigo-900,
             .bg-indigo-600,
             .bg-white {
                 background: white !important;
                 color: black !important;
                 border: 1px solid #eee;
-                /* Light border for structure in print */
             }
         }
 
@@ -147,8 +145,6 @@
             transform: translateY(-1px);
         }
 
-
-        /* Language Toggle Styles - Using attribute contains for better matching */
         html[lang^="en"] .lang-pt {
             display: none !important;
         }
@@ -161,9 +157,7 @@
 
 <body class="text-slate-800 leading-relaxed">
 
-    <!-- Fixed Buttons Container -->
     <div class="fixed top-6 right-6 z-50 no-print flex flex-col gap-3 items-end">
-        <!-- Language Toggle -->
         <button onclick="toggleLanguage()" id="lang-toggle"
             class="bg-white hover:bg-slate-50 text-slate-700 font-semibold py-2 px-4 rounded-full shadow-lg transition-all duration-300 transform hover:scale-105 flex items-center gap-2 border border-slate-200">
             <span class="lang-pt flex items-center gap-2">
@@ -187,10 +181,8 @@
                 </svg>
                 PT
             </span>
-        </button>
-
-        <!-- Export Button -->
-        <button onclick="window.print()"
+        </button>        <!-- Export Button -->
+        <button onclick="printCV()"
             class="bg-indigo-600 hover:bg-indigo-700 text-white font-semibold py-2 px-6 rounded-full shadow-lg transition-all duration-300 transform hover:scale-105 flex items-center gap-2">
             <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24"
                 stroke="currentColor">
@@ -204,12 +196,10 @@
 
     <div class="max-w-4xl mx-auto px-6 py-12 md:py-16 lg:py-20 print:p-0">
 
-        <!-- Header -->
         <header class="mb-10 md:flex md:justify-between md:items-start">
             <div>
                 <h1 class="text-5xl md:text-6xl font-bold text-slate-900 tracking-tight mb-3">João Guilherme Boss</h1>
-                <p id="header-title" class="text-xl md:text-2xl text-indigo-600 font-medium tracking-wide">Produtor
-                    Multimídia</p>
+                <p id="header-title" class="text-xl md:text-2xl text-indigo-600 font-medium tracking-wide">Produtor Multimídia</p>
 
                 <div class="mt-8 grid grid-cols-1 sm:grid-cols-2 gap-y-2 gap-x-6 text-slate-600 text-sm md:text-base">
                     <span class="flex items-center gap-2">
@@ -257,7 +247,6 @@
             </div>
         </header>
 
-        <!-- Tabs Navigation -->
         <nav class="flex flex-wrap gap-2 mb-12 no-print p-1.5 bg-slate-200/40 rounded-2xl w-fit">
             <button onclick="switchTab('geral')" id="btn-geral"
                 class="tab-btn active px-8 py-3 rounded-xl font-bold transition-all duration-300 text-slate-600 hover:bg-white/60 bg-indigo-600 text-white shadow-md">
@@ -273,11 +262,14 @@
                 class="tab-btn px-8 py-3 rounded-xl font-bold transition-all duration-300 text-slate-600 hover:bg-white/60">
                 Design
             </button>
+            <button onclick="switchTab('ai-trainer')" id="btn-ai-trainer"
+                class="tab-btn px-8 py-3 rounded-xl font-bold transition-all duration-300 text-slate-600 hover:bg-white/60">
+                <span class="lang-pt">Inovação e Tecnologia</span>
+                <span class="lang-en">Innovation & Technology</span>
+            </button>
         </nav>
 
-        <!-- CONTENT: GERAL (Fiel ao PDF CV GERAL NOTION) -->
         <div id="tab-geral" class="tab-content active-print space-y-12">
-
             <section class="bg-white p-8 md:p-10 rounded-3xl shadow-sm border border-slate-100 section-animate">
                 <h2 class="text-2xl font-bold text-slate-900 mb-6 flex items-center gap-3">
                     <span class="w-8 h-1 bg-indigo-600 rounded-full"></span>
@@ -285,15 +277,10 @@
                     <span class="lang-en">Multimedia Producer</span>
                 </h2>
                 <p class="text-lg text-slate-700 leading-relaxed italic lang-pt">
-                    Profissional multidisciplinar com mais de 10 anos de experiência em Design Gráfico e Produção de
-                    Áudio. Especialista em gestão de projetos ponta a ponta para clientes nacionais e internacionais,
-                    com foco na otimização de processos criativos, qualidade técnica e visão estratégica de negócios.
-                    Fluente em inglês.
+                    Profissional multidisciplinar com mais de 10 anos de experiência em Design Gráfico e Produção de Áudio. Especialista em gestão de projetos ponta a ponta para clientes nacionais e internacionais, com foco na otimização de processos criativos, qualidade técnica e visão estratégica de negócios. Fluente em inglês.
                 </p>
                 <p class="text-lg text-slate-700 leading-relaxed italic lang-en">
-                    Multidisciplinary professional with over 10 years of experience in Graphic Design and Audio
-                    Production. Specialist in end-to-end project management for national and international clients,
-                    focusing on process optimization, technical quality, and strategic business vision.
+                    Multidisciplinary professional with over 10 years of experience in Graphic Design and Audio Production. Specialist in end-to-end project management for national and international clients, focusing on process optimization, technical quality, and strategic business vision.
                 </p>
             </section>
 
@@ -310,129 +297,94 @@
                                     <span class="lang-pt">Design & Dir. Arte</span>
                                     <span class="lang-en">Design & Art Direction</span>
                                 </h4>
-                                <p class="text-sm text-slate-600 lang-pt">Identidade visual, tipografia, design
-                                    editorial,
-                                    banners, pré-impressão (Photoshop, Illustrator, Express).</p>
-                                <p class="text-sm text-slate-600 lang-en">Visual identity, typography, editorial design,
-                                    banners, prepress (Photoshop, Illustrator, Express).</p>
+                                <p class="text-sm text-slate-600 lang-pt">Identidade visual, tipografia, design editorial, banners, pré-impressão (Photoshop, Illustrator, Express).</p>
+                                <p class="text-sm text-slate-600 lang-en">Visual identity, typography, editorial design, banners, prepress (Photoshop, Illustrator, Express).</p>
                             </div>
                             <div>
                                 <h4 class="font-bold text-slate-800 mb-2 text-sm uppercase">
                                     <span class="lang-pt">Áudio & Sound Design</span>
                                     <span class="lang-en">Audio & Sound Design</span>
                                 </h4>
-                                <p class="text-sm text-slate-600 lang-pt">Engenharia, gravação, mixagem, masterização,
-                                    restauração de áudio (Audition, Ableton Live, iZotope RX).</p>
-                                <p class="text-sm text-slate-600 lang-en">Engineering, recording, mixing, mastering,
-                                    audio restoration (Audition, Ableton Live, iZotope RX).</p>
+                                <p class="text-sm text-slate-600 lang-pt">Engenharia, gravação, mixagem, masterização, restauração de áudio (Audition, Ableton Live, iZotope RX).</p>
+                                <p class="text-sm text-slate-600 lang-en">Engineering, recording, mixing, mastering, audio restoration (Audition, Ableton Live, iZotope RX).</p>
                             </div>
                             <div>
                                 <h4 class="font-bold text-slate-800 mb-2 text-sm uppercase">
                                     <span class="lang-pt">Inovação & IA</span>
                                     <span class="lang-en">Innovation & AI</span>
                                 </h4>
-                                <p class="text-sm text-slate-600 lang-pt">Implementação de fluxos de trabalho assistidos
-                                    por IA
-                                    para pesquisa, estruturação de propostas e processamento de assets.</p>
-                                <p class="text-sm text-slate-600 lang-en">Implementation of AI-assisted workflows for
-                                    research, proposal structuring, and asset processing.</p>
+                                <p class="text-sm text-slate-600 lang-pt">Implementação de fluxos de trabalho assistidos por IA para pesquisa, estruturação de propostas e processamento de assets.</p>
+                                <p class="text-sm text-slate-600 lang-en">Implementation of AI-assisted workflows for research, proposal structuring, and asset processing.</p>
                             </div>
-                        </div>
-                    </section>
-                    <section>
-                        <h3 class="text-xl font-bold text-slate-900 mb-4 border-b pb-2">
-                            <span class="lang-pt">Idiomas</span>
-                            <span class="lang-en">Languages</span>
-                        </h3>
-                        <div class="lang-pt">
-                            <p class="font-medium">Português: Nativo</p>
-                            <p class="font-medium">Inglês: Fluente (C2)</p>
-                        </div>
-                        <div class="lang-en">
-                            <p class="font-medium">Portuguese: Native</p>
-                            <p class="font-medium">English: (C2)</p>
                         </div>
                     </section>
                 </div>
 
                 <div class="md:col-span-2 space-y-12">
                     <section>
-                        <h3 class="text-2xl font-bold text-slate-900 mb-8 border-b pb-4 flex items-center gap-3">
+                        <h3 class="text-2xl font-bold text-slate-900 mb-8 border-b pb-4">
                             <span class="lang-pt">Experiência Profissional</span>
                             <span class="lang-en">Professional Experience</span>
                         </h3>
                         <div class="space-y-12">
                             <div class="relative pl-8 border-l-2 border-indigo-600">
-                                <span class="text-xs font-bold text-indigo-600 mb-1 block">2025</span>
+                                <span class="text-xs font-bold text-indigo-600 mb-1 block">2015 – Presente</span>
+                                <h4 class="text-xl font-bold">
+                                    <span class="lang-pt">Produção Musical em Estúdio Próprio</span>
+                                    <span class="lang-en">Music Production in Own Studio</span>
+                                </h4>
+                                <ul class="text-slate-600 list-disc list-outside ml-4 text-sm space-y-1">
+                                    <li class="lang-pt">Gestão integral de clientes e projetos multimídia, unindo identidade visual e sonora.</li>
+                                    <li class="lang-en">Comprehensive client and multimedia project management, merging visual and sound identity.</li>
+                                    <li class="lang-pt">Produção técnica e artística de ponta a ponta (do briefing à masterização e entrega final).</li>
+                                    <li class="lang-en">End-to-end technical and artistic production (from briefing to mastering and final delivery).</li>
+                                </ul>
+                            </div>
+                            <div class="relative pl-8 border-l-2 border-slate-200">
+                                <span class="text-xs font-bold text-slate-400 mb-1 block">2025</span>
                                 <h4 class="text-xl font-bold">
                                     <span class="lang-pt">Instrutor Especialista em Áudio (Adobe Audition)</span>
                                     <span class="lang-en">Audio Specialist Instructor (Adobe Audition)</span>
                                 </h4>
-                                <p class="text-indigo-600 font-medium mb-3">
-                                    <span class="lang-pt">ENG DTP & Multimídia (Centro de Treinamento Autorizado
-                                        Adobe)</span>
-                                    <span class="lang-en">ENG DTP & Multimedia (Adobe Authorized Training Center)</span>
-                                </p>
+                                <p class="text-slate-500 font-medium mb-3">ENG DTP & Multimídia</p>
                                 <ul class="text-slate-600 list-disc list-outside ml-4 text-sm space-y-1">
-                                    <li class="lang-pt">Treinamento profissional em Adobe Creative Cloud e suporte de
-                                        alto nível para profissionais de multimídia.</li>
-                                    <li class="lang-en">Professional training in Adobe Creative Cloud and high-level
-                                        support for multimedia professionals.</li>
+                                    <li class="lang-pt">Treinamento profissional em Adobe Creative Cloud e suporte de alto nível.</li>
+                                    <li class="lang-en">Professional training in Adobe Creative Cloud and high-level support.</li>
                                 </ul>
                             </div>
                             <div class="relative pl-8 border-l-2 border-slate-200">
-                                <span class="text-xs font-bold text-slate-400 mb-1 block">2015 – Presente</span>
+                                <span class="text-xs font-bold text-slate-400 mb-1 block">2024 – Presente</span>
                                 <h4 class="text-xl font-bold">
-                                    <span class="lang-pt">Produtor Multimídia & Diretor de Arte (Freelance)</span>
-                                    <span class="lang-en">Multimedia Producer & Art Director (Freelance)</span>
+                                    <span class="lang-pt">Instrutor de Inglês</span>
+                                    <span class="lang-en">English Instructor</span>
                                 </h4>
-                                <p class="text-indigo-600 font-medium mb-3">
-                                    <span class="lang-pt">Autônomo</span>
-                                    <span class="lang-en">Self-employed</span>
-                                </p>
                                 <ul class="text-slate-600 list-disc list-outside ml-4 text-sm space-y-1">
-                                    <li class="lang-pt">Execução de identidade visual, projetos impressos/digitais e
-                                        produção musical completa (da composição à masterização).</li>
-                                    <li class="lang-en">Visual identity execution, print/digital projects, and full
-                                        music production (from composition to mastering).</li>
-                                    <li class="lang-pt">Participação artística em espaços culturais como o Conservatório
-                                        de MPB de Curitiba e a Aliança Francesa.</li>
-                                    <li class="lang-en">Artistic participation in cultural spaces such as the Curitiba
-                                        MPB Conservatory and Aliança Francesa.</li>
+                                    <li class="lang-pt">Foco em conversação e inglês técnico para profissionais.</li>
+                                    <li class="lang-en">Focus on conversation and technical English for professionals.</li>
                                 </ul>
                             </div>
                             <div class="relative pl-8 border-l-2 border-slate-200">
-                                <span class="text-xs font-bold text-slate-400 mb-1 block">2013 – 2014</span>
+                                <span class="text-xs font-bold text-slate-400 mb-1 block">2014</span>
                                 <h4 class="text-xl font-bold">
-                                    <span class="lang-pt">Designer Gráfico (CLT)</span>
+                                    <span class="lang-pt">Designer Gráfico</span>
                                     <span class="lang-en">Graphic Designer</span>
                                 </h4>
-                                <p class="text-indigo-600 font-medium mb-3">Brasutil / Arte e Comunicação Visual</p>
+                                <p class="text-indigo-600 font-medium mb-3">Brasutil</p>
                                 <ul class="text-slate-600 list-disc list-outside ml-4 text-sm space-y-1">
-                                    <li class="lang-pt">Design integrado ao marketing para newsletters, banners e
-                                        campanhas promocionais.</li>
-                                    <li class="lang-en">Marketing-integrated design for newsletters, banners, and
-                                        promotional campaigns.</li>
+                                    <li class="lang-pt">Design integrado ao marketing para newsletters, banners e campanhas promocionais.</li>
+                                    <li class="lang-en">Marketing-integrated design for newsletters, banners, and promotional campaigns.</li>
                                 </ul>
                             </div>
-                            <!-- Novo Item -->
                             <div class="relative pl-8 border-l-2 border-slate-200">
-                                <span class="text-xs font-bold text-slate-400 mb-1 block">
-                                    <span class="lang-pt">2025 – Presente</span>
-                                    <span class="lang-en">2025 – Present</span>
-                                </span>
+                                <span class="text-xs font-bold text-slate-400 mb-1 block">2013</span>
                                 <h4 class="text-xl font-bold">
-                                    <span class="lang-pt">Professor de Inglês (Foco em Conversação)</span>
-                                    <span class="lang-en">English Teacher (Conversation Focus)</span>
+                                    <span class="lang-pt">Designer Gráfico</span>
+                                    <span class="lang-en">Graphic Designer</span>
                                 </h4>
-                                <p class="text-indigo-600 font-medium mb-3">Aliança América</p>
+                                <p class="text-indigo-600 font-medium mb-3">Arte e Comunicação Visual</p>
                                 <ul class="text-slate-600 list-disc list-outside ml-4 text-sm space-y-1">
-                                    <li class="lang-pt">Facilitação de aulas avançadas. Vivência diária que confere
-                                        facilidade na pesquisa de tendências globais, leitura de documentações técnicas
-                                        e comunicação internacional.</li>
-                                    <li class="lang-en">Advanced class facilitation. Daily experience providing ease in
-                                        researching global trends, reading technical documentation, and international
-                                        communication.</li>
+                                    <li class="lang-pt">Fechamento de arquivos para impressão, identidade visual e direção de arte.</li>
+                                    <li class="lang-en">File preparation for print, visual identity, and art direction.</li>
                                 </ul>
                             </div>
                         </div>
@@ -445,26 +397,13 @@
                     <span class="lang-pt">Educação e Formação</span>
                     <span class="lang-en">Education & Training</span>
                 </h3>
-                <div class="grid sm:grid-cols-2 gap-8">
-                    <div>
-                        <p class="font-bold text-slate-800">Design Gráfico</p>
-                        <p class="text-slate-500 text-sm italic">UNICURITIBA | 2013</p>
-                    </div>
-                    <div>
-                        <p class="font-bold text-slate-800">
-                            <span class="lang-pt">Laboratório de Produção Musical</span>
-                            <span class="lang-en">Music Production Laboratory</span>
-                        </p>
-                        <p class="text-slate-500 text-sm italic lang-pt">Oficina de Música de Curitiba (PUC-PR) | 2023
-                        </p>
-                        <p class="text-slate-500 text-sm italic lang-en">Oficina de Música de Curitiba Workshop (PUC-PR)
-                            | 2023</p>
-                    </div>
+                <div>
+                    <p class="font-bold text-slate-800">Design Gráfico</p>
+                    <p class="text-slate-500 text-sm italic">UNICURITIBA | <span class="lang-pt">Concluído em 2013</span><span class="lang-en">Completed in 2013</span></p>
                 </div>
             </section>
         </div>
 
-        <!-- CONTENT: AUDIO (Fiel ao PDF CV AUDIO NOTION) -->
         <div id="tab-audio" class="tab-content hidden space-y-12">
 
             <section class="bg-indigo-900 p-8 md:p-10 rounded-3xl shadow-lg text-white section-animate">
@@ -579,18 +518,12 @@
                                     <span class="lang-en">Own Studio</span>
                                 </p>
                                 <ul class="text-slate-600 list-disc list-outside ml-4 text-sm space-y-2">
-                                    <li class="lang-pt">Gestão integral do estúdio operando como produtor e engenheiro
-                                        para artistas no Brasil e França.</li>
-                                    <li class="lang-en">Full studio management operating as producer and engineer for
-                                        artists in Brazil and France.</li>
+                                    <li class="lang-pt">Gestão integral do estúdio operando como produtor e engenheiro.</li>
+                                    <li class="lang-en">Full studio management operating as producer and engineer.</li>
                                     <li class="lang-pt">Produção 360° de dezenas de faixas (gravação à masterização).
                                     </li>
                                     <li class="lang-en">360° production of dozens of tracks (recording to mastering).
                                     </li>
-                                    <li class="lang-pt">Colaboração com Wugala Flama, Lagrace, BodatiousThang e Machete
-                                        Bomb.</li>
-                                    <li class="lang-en">Collaboration with Wugala Flama, Lagrace, BodatiousThang, and
-                                        Machete Bomb.</li>
                                     <li class="lang-pt">Oficina "Introdução ao Beatmaking" (UNIOESTE 2024 - Cascavel-PR
                                         e Colégio Estadual Cataratas do Iguaçu - Foz do Iguaçu-PR).</li>
                                     <li class="lang-en">"Introduction to Beatmaking" Workshop (UNIOESTE 2024 -
@@ -611,8 +544,8 @@
                                 <p><strong>2024:</strong> Virada Cultural Toledo-PR, Conservatório MPB.</p>
                             </div>
                             <div>
-                                <p><strong>2023:</strong> <span class="lang-pt">Feira do Livro Foz</span><span
-                                        class="lang-en">Foz Book Fair</span>, Aliança Francesa.</p>
+                                <p><strong>2023:</strong> <span class="lang-pt">Feira do Livro: Foz do Iguaçu - PR e Prudente Cultural - Aliança Francesa: Curitiba - PR</span>
+                                    <span class="lang-en">Foz Book Fair: Foz do Iguaçu - PR and Prudente Cultural - Aliança Francesa: Curitiba - PR</span></p>
                                 <p><strong>2015/16:</strong> <span class="lang-pt">Estação Pedreira</span><span
                                         class="lang-en">Pedreira Station</span> (Pedreira Paulo Leminski).</p>
                             </div>
@@ -623,24 +556,28 @@
 
             <section class="pt-10 border-t">
                 <h3 class="text-xl font-bold mb-4">
-                    <span class="lang-pt">Formação Técnica</span>
-                    <span class="lang-en">Technical Training</span>
+                    <span class="lang-pt">Formação e Especialização</span>
+                    <span class="lang-en">Education & Training</span>
                 </h3>
-                <p class="font-bold">
-                    <span class="lang-pt">Laboratório de Produção Musical</span>
-                    <span class="lang-en">Music Production Laboratory</span>
-                    <span class="text-slate-500 font-normal lang-pt">| Oficina de Música de Curitiba (PUC-PR)
-                        (2023)</span>
-                    <span class="text-slate-500 font-normal lang-en">| Oficina de Música de Curitiba Workshop (PUC-PR)
-                        (2023)</span>
-                </p>
-                <p class="font-bold">Design Gráfico <span class="text-slate-500 font-normal italic">| UNICURITIBA
-                        (2013)</span>
-                </p>
+                <div class="grid sm:grid-cols-2 gap-8">
+                    <div>
+                        <p class="font-bold text-slate-800">
+                            <span class="lang-pt">Laboratório de Produção Musical</span>
+                            <span class="lang-en">Music Production Laboratory</span>
+                        </p>
+                        <p class="text-slate-500 text-sm italic">
+                            <span class="lang-pt">Oficina de Música de Curitiba (PUC-PR) | 2023</span>
+                            <span class="lang-en">Oficina de Música de Curitiba Workshop (PUC-PR) | 2023</span>
+                        </p>
+                    </div>
+                    <div>
+                        <p class="font-bold text-slate-800">Design Gráfico</p>
+                        <p class="text-slate-500 text-sm italic">UNICURITIBA | <span class="lang-pt">Concluído em 2013</span><span class="lang-en">Completed in 2013</span></p>
+                    </div>
+                </div>
             </section>
         </div>
 
-        <!-- CONTENT: DESIGN (Fiel ao PDF CV DESIGN NOTION) -->
         <div id="tab-design" class="tab-content hidden space-y-12">
 
             <section class="bg-white p-8 md:p-10 rounded-3xl shadow-sm border-t-4 border-indigo-600 section-animate">
@@ -734,21 +671,27 @@
                                 </ul>
                             </div>
                             <div class="relative pl-8 border-l-2 border-slate-200">
-                                <span class="text-xs font-bold text-slate-400 mb-1 block">2013 – 2014</span>
+                                <span class="text-xs font-bold text-slate-400 mb-1 block">2014</span>
                                 <h4 class="text-xl font-bold">
-                                    <span class="lang-pt">Designer Gráfico (CLT)</span>
+                                    <span class="lang-pt">Designer Gráfico</span>
                                     <span class="lang-en">Graphic Designer</span>
                                 </h4>
-                                <p class="text-indigo-600 font-medium mb-3">Brasutil / Arte e Comunicação Visual</p>
+                                <p class="text-indigo-600 font-medium mb-3">Brasutil</p>
                                 <ul class="text-slate-600 list-disc list-outside ml-4 text-sm space-y-2">
-                                    <li class="lang-pt">Manutenção rigorosa da identidade visual corporativa no
-                                        marketing.</li>
-                                    <li class="lang-en">Rigorous maintenance of corporate visual identity in marketing.
-                                    </li>
-                                    <li class="lang-pt">Criação de newsletters, banners, campanhas promocionais e
-                                        tratamento de imagem.</li>
-                                    <li class="lang-en">Creation of newsletters, banners, promotional campaigns, and
-                                        image processing.</li>
+                                    <li class="lang-pt">Design integrado ao marketing para newsletters, banners e campanhas promocionais.</li>
+                                    <li class="lang-en">Marketing-integrated design for newsletters, banners, and promotional campaigns.</li>
+                                </ul>
+                            </div>
+                            <div class="relative pl-8 border-l-2 border-slate-200">
+                                <span class="text-xs font-bold text-slate-400 mb-1 block">2013</span>
+                                <h4 class="text-xl font-bold">
+                                    <span class="lang-pt">Designer Gráfico</span>
+                                    <span class="lang-en">Graphic Designer</span>
+                                </h4>
+                                <p class="text-indigo-600 font-medium mb-3">Arte e Comunicação Visual</p>
+                                <ul class="text-slate-600 list-disc list-outside ml-4 text-sm space-y-2">
+                                    <li class="lang-pt">Fechamento de arquivos para impressão, identidade visual e direção de arte.</li>
+                                    <li class="lang-en">File preparation for print, visual identity, and art direction.</li>
                                 </ul>
                             </div>
                         </div>
@@ -768,7 +711,131 @@
             </section>
         </div>
 
-        <!-- Footer -->
+        <div id="tab-ai-trainer" class="tab-content hidden space-y-12">
+            <section class="bg-indigo-900 p-8 md:p-10 rounded-3xl shadow-lg text-white section-animate">
+                <h2 class="text-2xl font-bold mb-6">
+                    <span class="lang-pt">Produtor Multimídia & Tecnologia</span>
+                    <span class="lang-en">Multimedia Producer & Tech</span>
+                </h2>
+                <p class="text-lg leading-relaxed opacity-90 italic lang-pt">
+                    Freelancer multidisciplinar com mais de uma década de experiência em design e áudio. Meu foco é a entrega de projetos criativos de alta qualidade, utilizando Inteligência Artificial de forma experimental para otimizar fluxos de trabalho tradicionais e explorar novas possibilidades de produtividade no dia a dia.
+                </p>
+                <p class="text-lg leading-relaxed opacity-90 italic lang-en">
+                    Multidisciplinary freelancer with over a decade of experience in design and audio. My focus is on delivering high-quality creative projects, using AI experimentally to optimize traditional workflows and explore new productivity possibilities in daily operations.
+                </p>
+            </section>
+
+            <div class="grid md:grid-cols-3 gap-12">
+                <div class="md:col-span-1 space-y-12">
+                    <section>
+                        <h3 class="text-xl font-bold text-slate-900 mb-6 border-b pb-2">
+                            <span class="lang-pt">Ferramentas & Fluxo</span>
+                            <span class="lang-en">Tools & Workflow</span>
+                        </h3>
+                        <div class="space-y-6 text-sm">
+                            <div>
+                                <h4 class="font-bold uppercase mb-1">
+                                    <span class="lang-pt">Criação Assistida</span>
+                                    <span class="lang-en">Assisted Creation</span>
+                                </h4>
+                                <p class="text-slate-600 lang-pt">Adobe Creative Cloud (Design) e Ableton Live (Áudio) integrados a modelos de IA para agilizar roteiros e assets.</p>
+                                <p class="text-slate-600 lang-en">Adobe Creative Cloud (Design) and Ableton Live (Audio) integrated with AI models to speed up scripts and assets.</p>
+                            </div>
+                            <div>
+                                <h4 class="font-bold uppercase mb-1">
+                                    <span class="lang-pt">Pesquisa & Planejamento</span>
+                                    <span class="lang-en">Research & Planning</span>
+                                </h4>
+                                <p class="text-slate-600 lang-pt">Uso experimental de LLMs para estruturar propostas de design e organizar processos administrativos de freelance.</p>
+                                <p class="text-slate-600 lang-en">Experimental use of LLMs to structure design proposals and organize freelance administrative processes.</p>
+                            </div>
+                        </div>
+                    </section>
+                </div>
+
+                <div class="md:col-span-2 space-y-12">
+                    <section>
+                        <h3 class="text-2xl font-bold text-slate-900 mb-8 border-b pb-4">
+                            <span class="lang-pt">EXPERIÊNCIA</span>
+                            <span class="lang-en">JOB EXPERIENCE</span>
+                        </h3>
+                        <div class="space-y-10">
+                            <div class="relative pl-8 border-l-2 border-indigo-600">
+                                <span class="text-xs font-bold text-indigo-600 mb-1 block">2015 – Presente</span>
+                                <h4 class="text-xl font-bold">
+                                    <span class="lang-pt">Produção Musical em Estúdio Próprio</span>
+                                    <span class="lang-en">Music Production in Own Studio</span>
+                                </h4>
+                                <ul class="text-slate-600 list-disc list-outside ml-4 text-sm space-y-2">
+                                    <li class="lang-pt">Gestão estratégica de clientes e projetos multimídia, equilibrando identidade visual e sonora.</li>
+                                    <li class="lang-en">Strategic management of clients and multimedia projects, balancing visual and sound identity.</li>
+                                    <li class="lang-pt">Produção técnica e artística de ponta a ponta, com foco em resultados e qualidade profissional.</li>
+                                    <li class="lang-en">End-to-end technical and artistic production, focusing on results and professional quality.</li>
+                                </ul>
+                            </div>
+                            <div class="relative pl-8 border-l-2 border-slate-200">
+                                <span class="text-xs font-bold text-slate-400 mb-1 block">2024 – Presente</span>
+                                <h4 class="text-xl font-bold">
+                                    <span class="lang-pt">Instrutor de Inglês (Aliança América)</span>
+                                    <span class="lang-en">English Instructor (Aliança América)</span>
+                                </h4>
+                                <ul class="text-slate-600 list-disc list-outside ml-4 text-sm space-y-2">
+                                    <li class="lang-pt">Aulas personalizadas focadas em inglês prático e conversação para alunos brasileiros e internacionais.</li>
+                                    <li class="lang-en">Personalized lessons focused on practical English and conversation for Brazilian and international students.</li>
+                                </ul>
+                            </div>
+                            <div class="relative pl-8 border-l-2 border-slate-200">
+                                <span class="text-xs font-bold text-slate-400 mb-1 block">2024 – Presente</span>
+                                <h4 class="text-xl font-bold">
+                                    <span class="lang-pt">Interação Criativa (Experimental)</span>
+                                    <span class="lang-en">Creative Interaction (Experimental)</span>
+                                </h4>
+                                <ul class="text-slate-600 list-disc list-outside ml-4 text-sm space-y-2">
+                                    <li class="lang-pt">Testes práticos com ferramentas generativas para descobrir novos limites de produtividade na produção.</li>
+                                    <li class="lang-en">Practical testing with generative tools to discover new productivity limits in production.</li>
+                                    <li class="lang-pt">Documentação pessoal de como a tecnologia pode ser um suporte real para o profissional autônomo.</li>
+                                    <li class="lang-en">Personal documentation of how technology can provide real support for independent professionals.</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </section>
+                </div>
+            </div>
+
+            <section class="pt-10 border-t">
+                <h3 class="text-xl font-bold mb-4">
+                    <span class="lang-pt">Habilidades Gerais</span>
+                    <span class="lang-en">General Skills</span>
+                </h3>
+                <p class="font-bold">
+                    <span class="lang-pt">Inglês Avançado</span>
+                    <span class="lang-en">Advanced English</span>
+                    <span class="text-slate-500 font-normal"> | Uso diário para pesquisa, instrução e comunicação técnica internacional.</span>
+                </p>
+                <p class="font-bold">
+                    <span class="lang-pt">Articulação Técnica</span>
+                    <span class="lang-en">Technical Articulation</span>
+                    <span class="text-slate-500 font-normal"> | Capacidade de converter processos intuitivos em fluxos de trabalho organizados.</span>
+                </p>
+                <p class="font-bold">
+                    <span class="lang-pt">Interesses Reais</span>
+                    <span class="lang-en">Real Interests</span>
+                    <span class="text-slate-500 font-normal"> | Estudo contínuo em educação, linguística e novas ferramentas criativas.</span>
+                </p>
+            </section>
+
+            <section class="pt-10 border-t">
+                <h3 class="text-xl font-bold mb-4">
+                    <span class="lang-pt">Educação e Formação</span>
+                    <span class="lang-en">Education & Training</span>
+                </h3>
+                <div>
+                    <p class="font-bold text-slate-800">Design Gráfico</p>
+                    <p class="text-slate-500 text-sm italic">UNICURITIBA | <span class="lang-pt">Concluído em 2013</span><span class="lang-en">Completed in 2013</span></p>
+                </div>
+            </section>
+        </div>
+
         <footer class="mt-20 pt-10 border-t border-slate-200 text-center text-slate-400 text-xs no-print">
             <p>© 2026 João Guilherme Boss.</p>
         </footer>
@@ -777,22 +844,34 @@
 
     <script>
         let currentLang = 'pt';
+        let currentTab = 'geral';
         document.documentElement.lang = currentLang;
+
+        function printCV() {
+            const originalTitle = document.title;
+            const tabName = currentTab === 'ai-trainer' ? 'AI_Innovation' : currentTab.charAt(0).toUpperCase() + currentTab.slice(1);
+            const langName = currentLang.toUpperCase();
+            
+            // Generate clean filename: Joao_Boss_CV_2026_TabName_LANG
+            document.title = `Joao_Boss_CV_2026_${tabName}_${langName}`;
+            
+            window.print();
+            
+            // Restore original title
+            setTimeout(() => {
+                document.title = originalTitle;
+            }, 1000);
+        }
 
         function toggleLanguage() {
             currentLang = currentLang === 'pt' ? 'en' : 'pt';
             document.documentElement.lang = currentLang;
-
-            // Re-run switchTab for the currently active tab to update the header title
             const activeBtn = document.querySelector('.tab-btn.bg-indigo-600');
-            if (activeBtn) {
-                const tabId = activeBtn.id.replace('btn-', '');
-                switchTab(tabId);
-            }
+            if (activeBtn) switchTab(activeBtn.id.replace('btn-', ''));
         }
 
         function switchTab(tabId) {
-            // Content
+            currentTab = tabId;
             document.querySelectorAll('.tab-content').forEach(s => {
                 s.classList.add('hidden');
                 s.classList.remove('active-print');
@@ -801,7 +880,6 @@
             active.classList.remove('hidden');
             active.classList.add('active-print');
 
-            // Buttons
             document.querySelectorAll('.tab-btn').forEach(b => {
                 b.classList.remove('bg-indigo-600', 'text-white', 'shadow-md');
                 b.classList.add('text-slate-600');
@@ -810,17 +888,18 @@
             activeBtn.classList.add('bg-indigo-600', 'text-white', 'shadow-md');
             activeBtn.classList.remove('text-slate-600');
 
-            // Title
             const labelsMap = {
                 'pt': {
                     'geral': 'Produtor Multimídia',
                     'audio': 'Produtor Musical & Engenheiro de Áudio',
-                    'design': 'Designer Gráfico & Diretor de Arte'
+                    'design': 'Designer Gráfico & Diretor de Arte',
+                    'ai-trainer': 'Inovação e Tecnologia'
                 },
                 'en': {
                     'geral': 'Multimedia Producer',
                     'audio': 'Music Producer & Audio Engineer',
-                    'design': 'Graphic Designer & Art Director'
+                    'design': 'Graphic Designer & Art Director',
+                    'ai-trainer': 'Innovation & Technology'
                 }
             };
             document.getElementById('header-title').innerText = labelsMap[currentLang][tabId];
